@@ -19,6 +19,10 @@ class MainController extends Controller {
     }
 
     public function contact_check(Request $request) {
-        dd($request);
+        $valid = $request->validate([
+            'email' => 'required|min:4|max:30',
+            'subject' => 'required|min:4|max:50',
+            'message' => 'required|min:15|max:500',
+        ]);
     }
 }

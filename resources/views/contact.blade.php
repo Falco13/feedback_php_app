@@ -7,6 +7,15 @@
     <div class="row">
         <div class="col-md-7 m-auto">
             <h1>Contact Page</h1>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form method="post" action="/contact/check">
                 @csrf
                 <input name="email" type="email" id="email" placeholder="Your email" class="form-control"><br>
