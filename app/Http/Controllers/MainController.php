@@ -16,7 +16,8 @@ class MainController extends Controller {
     }
 
     public function contact() {
-        return view('contact');
+        $contacts = new ContactModel();
+        return view('contact', ['cont' => $contacts->all()]);
     }
 
     public function contact_check(Request $request) {
