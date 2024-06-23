@@ -1,12 +1,12 @@
 @extends('layout')
 
-@section('title') Feedback @endsection
+@section('title') Contact @endsection
 @section('main_content')
 
 <div class="container">
     <div class="row">
         <div class="col-md-7 m-auto">
-            <h1>Feedback Page</h1>
+            <h1>Contact Page</h1><br>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -24,7 +24,7 @@
                 <button type="submit" class="btn btn-warning">Send message</button>
             </form>
             <br>
-            <h1>All contants</h1>
+            <h1>All contacts</h1>
             @foreach ($cont as $item)
             <div class="alert alert-danger">
                 <h3>{{ $item->subject }}</h3>
