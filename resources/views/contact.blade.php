@@ -31,8 +31,8 @@
                 <b>{{ $item->email }}</b>
                 <p>{{ $item->message }}</p>
             </div>
-
             @endforeach
+            {{ $cont->links() }}
         </div>
     </div>
 </div>

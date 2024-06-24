@@ -17,7 +17,7 @@ class MainController extends Controller {
 
     public function contact() {
         $contacts = new ContactModel();
-        return view('contact', ['cont' => $contacts->all()]);
+        return view('contact', ['cont' => $contacts->simplepaginate(2)]);
     }
 
     public function contact_check(Request $request) {
