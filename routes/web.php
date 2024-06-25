@@ -4,9 +4,9 @@ use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [MainController::class, 'home']);
-
-Route::get('/about', [MainController::class, 'about']);
-
-Route::get('/contact', [MainController::class, 'contact'])->name('contact');
-Route::post('/contact/check', [MainController::class, 'contact_check']);
+Route::controller(MainController::class) -> group(function() {
+    Route::get('/', 'home');
+    Route::get('/about', 'about');
+    Route::get('/contact', 'contact')->name('contact');
+    Route::post('/contact/check', 'contact_check');
+});
