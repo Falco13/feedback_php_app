@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactModel;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class MainController extends Controller {
 
@@ -16,8 +17,9 @@ class MainController extends Controller {
     }
 
     public function contact() {
+        Paginator::useBootstrap();
         $contacts = new ContactModel();
-        return view('contact', ['cont' => $contacts->simplepaginate(2)]);
+        return view('contact', ['cont' => $contacts->paginate(2)]);
     }
 
     public function contact_check(Request $request) {
