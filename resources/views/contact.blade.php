@@ -16,6 +16,11 @@
                     </ul>
                 </div>
             @endif
+            @if(@session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success')}}
+                </div>
+            @endif
             <form method="post" action="/contact/check">
                 @csrf
                 <input name="email" type="email" id="email" placeholder="Your email" class="form-control"><br>

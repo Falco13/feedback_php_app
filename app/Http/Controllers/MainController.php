@@ -32,6 +32,6 @@ class MainController extends Controller {
         $contact->message = $request->input('message');
 
         $contact->save();
-        return redirect()->route('contact');
+        return redirect()->route('contact')->with('success', 'Thank you for your message!');
     }
 }
