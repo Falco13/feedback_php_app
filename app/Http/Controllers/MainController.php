@@ -24,7 +24,7 @@ class MainController extends Controller {
 
     public function contact_check(Request $request) {
         $valid = $request->validate([
-            'email' => 'required|min:4|max:30',
+            'email' => 'required|min:4|max:30|email',
             'subject' => 'required|min:4|max:50',
             'message' => 'required|min:15|max:500',
         ]);
