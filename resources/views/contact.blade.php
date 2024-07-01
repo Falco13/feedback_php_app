@@ -21,7 +21,7 @@
                     {{ session('success')}}
                 </div>
             @endif
-            <form method="post" action="/contact/check">
+            <form method="post" action="{{ route('contact_check') }}">
                 @csrf
                 <input name="email" type="email" id="email" placeholder="Your email" class="form-control"><br>
                 <input name="subject" type="text" id="subject" placeholder="Your subject" class="form-control"><br>

@@ -8,5 +8,5 @@ Route::controller(MainController::class) -> group(function() {
     Route::get('/', 'home');
     Route::get('/about', 'about');
     Route::get('/contact', 'contact')->name('contact');
-    Route::post('/contact/check', 'contact_check');
+    Route::post('/contact/check', 'contact_check')->name('contact_check');
 });
